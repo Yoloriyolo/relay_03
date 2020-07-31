@@ -54,4 +54,4 @@
 - 각 주차별 팀은 주 기능이 힘들 시 서브 기능을 구현할 수 있다.
 
 ### UI 설계
-- [[UI 설계도](https://docs.google.com/presentation/d/10_LDhi5gE6HRMyb9G11cD4XZKgyufq62Za5Njs0RkBU/edit#slide=id.g86ac92521f_0_10)]
+- [UI 설계도](https://docs.google.com/presentation/d/10_LDhi5gE6HRMyb9G11cD4XZKgyufq62Za5Njs0RkBU/edit#slide=id.g86ac92521f_0_10)
