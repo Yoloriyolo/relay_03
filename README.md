@@ -65,7 +65,7 @@
 ### :triangular_flag_on_post: 프로젝트 참여자
 - 1주차
   | [**J025 김대선**](https://github.com/kimdaeseon) | [**J026 김덕현**](https://github.com/Kim-deokhyeon)  |   [**J027 김도균**](https://github.com/kdogyun)   | [**J028 김도균**](https://github.com/thesulks) |
-| :----------------------------------------------: | :--------------------------------------------------: | :-----------------------------------------------: | :--------------------------------------------: |
-| [**J029 김도연**](https://github.com/do02reen24) |     [**J030 김도호**](https://github.com/Do-ho)      | [**J031 김동인**](https://github.com/dannydongin) | [**J032 김동현**](https://github.com/dooking)  |
-|  [**J034 김민섭**](https://github.com/msmk530)   | [**J035 김민성**](https://github.com/Front-line-dev) |   [**J036 김민식**](https://github.com/zmrdltl)   |                                                |
+  | :----------------------------------------------: | :--------------------------------------------------: | :-----------------------------------------------: | :--------------------------------------------: |
+  | [**J029 김도연**](https://github.com/do02reen24) |     [**J030 김도호**](https://github.com/Do-ho)      | [**J031 김동인**](https://github.com/dannydongin) | [**J032 김동현**](https://github.com/dooking)  |
+  |  [**J034 김민섭**](https://github.com/msmk530)   | [**J035 김민성**](https://github.com/Front-line-dev) |   [**J036 김민식**](https://github.com/zmrdltl)   |                                                |
 
