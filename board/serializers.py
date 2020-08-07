@@ -4,10 +4,10 @@ import requests
 from bs4 import BeautifulSoup
 
 def isMalicious(value):
-    url = "http://matmul.net/purifier"
+    url = "http://13.209.226.5/predict"
     res = requests.post(url, data={ 'message' : value })
     soup = BeautifulSoup(res.text, 'html.parser')
-    text = soup.select('body > div.layerall > div > div > div:nth-child(1) > div.pred_message')[0]
+    text = str(soup.select('body > div.layerall > div > div > div:nth-child(1) > div.pred_message')[0])
     head = 'd">'
     tail = '</h5><b'
     if "It's toxic" in text:
