@@ -1,5 +1,34 @@
 ## :two_men_holding_hands: ​부캠나우(나우누리)
 
+### :runner: Dependencies
+
+- python(v3.8)
+
+- node(v14.6)
+
+  
+
+### :office: Build
+
+- backend
+
+    ``` bash
+    $ pip install -r requirements.txt
+    $ cd backend
+    $ python manage.py runserver
+    ```
+
+- front
+
+  ``` bash
+  $ cd frontend
+  $ npm install
+$ npm run serve
+  ```
+  
+
+
+
 ### 📑 진행과정
 
 #### 	- [1주차](./1주차.md) : 기획
@@ -20,4 +49,3 @@
   | :-------------: | :-------------: | :-------------: | :-------------: |
   | **J079_박수연** | **J080_박슬우** | **J116_오정석** | **J117_오지현** |
   | **J153_이유택** | **J154_이은솔** | **J192_조정혜** | **J193_조준형** |
-
