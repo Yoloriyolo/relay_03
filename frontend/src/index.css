@@ -1,0 +1,7 @@
+@font-face { font-family: 'RecipeKorea'; src: url(./fonts/Recipekorea.ttf) format('truetype'); }
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
