@@ -20,18 +20,11 @@ class App extends Component {
         <NavigationBar />
         <Switch>
           <Route path="/board/:postId" component={Post} />
-          <Route path="/writing_post">
-            <Posting />
-          </Route>
-
+          <Route path="/writing_post" component={Posting} />
           <Route path="/login" component={LoginPage} />
           <Route path="/join" component={JoinPage}/>
           <Route path="/profile" component={ProfilePage} />
-
-          <Route path="/">
-            <Table />
-          </Route>
-          
+          <Route exact path="/" component={Table} />         
         </Switch>
       </Router>
     );

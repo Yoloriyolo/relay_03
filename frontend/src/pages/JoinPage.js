@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {isId, isPassword} from '../utils/validator';
 import StyledTextFiled from '../components/StyledTextFiled';
-import StyledButton from '../components/Button';
+import StyledButton from '../components/StyledButton';
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormGroup from "@material-ui/core/FormGroup";

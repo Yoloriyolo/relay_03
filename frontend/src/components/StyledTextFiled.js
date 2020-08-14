@@ -5,7 +5,6 @@ const StyledTextField = styled(TextField)`
     width: 100% !important;
     margin-top: 20px !important;
     margin-bottom: 30px !important;
-    display: block !iomportant;
 `;
 
 

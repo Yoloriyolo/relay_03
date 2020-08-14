@@ -7,6 +7,7 @@ router.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../../", "frontend/build"));
 });
 
+
 // /* get loing page. */
 // router.get('/login', function (req, res) {
 //   res.render('login', { page: "login" });

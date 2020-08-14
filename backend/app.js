@@ -10,7 +10,7 @@ const authRouter = require('./routes/auth');
 // const commentRouter = require('./routes/comment');
 const boardRouter = require('./routes/board');
 const registerRouter = require('./routes/register');
-const reactRouter = require('./routes/react')
+// const reactRouter = require('./routes/react')
 
 
 const app = express();
@@ -28,12 +28,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/board', boardRouter);
 app.use('/api/register', registerRouter);
 app.use('/api/auth', authRouter);
-app.use('/', reactRouter);
+app.use('', indexRouter);
+// app.use('/', reactRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
