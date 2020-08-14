@@ -4,6 +4,7 @@ import NavigationBar from './components/NavigationBar';
 import Table from './pages/Table';
 import Posting from './pages/Posting';
 import Post from './pages/Post';
+import LoginPage from './pages/LoginPage'
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,6 +21,8 @@ class App extends Component {
           <Route path="/board" component={Post} />
           <Route path="/writing_post">
             <Posting />
+          </Route>
+          <Route path="/login" component={LoginPage} >
           </Route>
           <Route path="/">
             <Table />
