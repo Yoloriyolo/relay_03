@@ -19,19 +19,25 @@ const useStyles = makeStyles((theme) => ({
 export default function LoginPage(props) {
   const classes = useStyles();
   const [id, setID] = useState("");
-  const [pw, setPW] = useState("");
+  const [password, setPW] = useState("");
+
+  const onSubmit = () => {
+    handleLogin({id, password});
+    setID("");
+    setPW("");
+  }
 
   return (
-    <form className="container" noValidate autoComplete="off" onSubmit={()=>handleLogin({id, pw})}>
+    <form className="container" noValidate autoComplete="off" onSubmit={(e)=>{ onSubmit(); e.preventDefault() }}>
         <div className="login_form">
           <div>
             <div className="input-group">
                 <label>ID</label>
-                <TextField style={styles.input} id="idInput" label="ID" onChange={(e) => setID(e.target.value)}/>
+                <TextField style={styles.input} id="idInput" label="id" value={id} onChange={(e) => setID(e.target.value)}/>
             </div>
             <div className="input-group">
                 <label>PW</label>
-                <TextField style={styles.input} id = "pwInput" label="PW" type="password" onChange={(e) => setPW(e.target.value)}/>
+                <TextField style={styles.input} id = "pwInput" label="pw" value={password} type="password" onChange={(e) => setPW(e.target.value)}/>
             </div>
           </div>
             <Button className="login-btn" variant="outlined" type="submit" value="Submit">Login</Button>

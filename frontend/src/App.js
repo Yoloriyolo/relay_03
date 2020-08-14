@@ -13,15 +13,13 @@ import {
   Route
 } from "react-router-dom";
 
-
 class App extends Component {
   render(){
     return (
       <Router>
         <NavigationBar />
         <Switch>
-          <Route path="/board" component={Post} />
-
+          <Route path="/board/:postId" component={Post} />
           <Route path="/writing_post">
             <Posting />
           </Route>

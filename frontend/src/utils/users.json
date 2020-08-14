@@ -1,0 +1,31 @@
+{
+    "myid": {
+        "id": "myid",
+        "password": "mypassword",
+        "nickname": "mynick",
+        "hobby": {
+            "coding": false,
+            "training": true,
+            "music": false,
+            "history": true,
+            "restaurant": false,
+            "drink": false
+        }
+    },
+    "yourid": {
+        "id": "yourid",
+        "password": "yourpassword",
+        "nickname": "yournick",
+        "hobby": {
+            "coding": false,
+            "training": true,
+            "music": false,
+            "history": true,
+            "restaurant": false,
+            "drink": false
+        }
+    }
+}
+
+
+

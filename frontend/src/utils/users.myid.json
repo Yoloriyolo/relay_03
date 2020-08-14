@@ -1,0 +1,14 @@
+// http://localhost:3000/users/myid
+{
+    "id": "myid",
+    "password": "mypassword",
+    "nickname": "mynick",
+    "hobby": {
+        "coding": false,
+        "training": true,
+        "music": false,
+        "history": true,
+        "restaurant": false,
+        "drink": false
+    }
+}

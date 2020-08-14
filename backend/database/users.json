@@ -38,5 +38,30 @@
             "drink": false
         }
     },
-    "undefined": {}
+    "test1234": {
+        "id": "test1234",
+        "password": "test1234",
+        "nickname": "test1234",
+        "hobby": {
+            "coding": false,
+            "traning": true,
+            "music": false,
+            "history": false,
+            "restaurant": false,
+            "drink": false
+        }
+    },
+    "test3": {
+        "id": "test3",
+        "password": "123456",
+        "nickname": "junnn",
+        "hobby": {
+            "coding": true,
+            "traning": false,
+            "music": false,
+            "history": false,
+            "restaurant": true,
+            "drink": false
+        }
+    }
 }

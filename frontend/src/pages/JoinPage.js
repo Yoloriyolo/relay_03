@@ -1,15 +1,27 @@
 import React, {useState} from 'react';
-import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 import {isId, isPassword} from '../utils/validator';
 import StyledTextFiled from '../components/StyledTextFiled';
 import StyledButton from '../components/Button';
-
-
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormGroup from "@material-ui/core/FormGroup";
+import {registerUser} from "../utils/API"
 
 const Container = styled.div`
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     margin-top 50px;
+`;
+
+const Text = styled.div`
+    color: #424242;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
 `;
 
 
@@ -30,17 +42,21 @@ const initialState = {
         value: '',
         vaild: false,
     },
-    interest: {
-        value: '',
-        vaild: false,
+    hobby: {
+        coding : false,
+        traning : false,
+        music : false,
+        history : false,
+        restaurant : false,
+        drink : false,
     }
 }
 
 
 export default function JoinPage(){
+
     const [inputs, setInputs] = useState(initialState);
-    const history = useHistory();
-    const {id, password, pwCheck, nick, interest} = inputs
+    const {id, password, pwCheck, nick, hobby} = inputs
 
 
     const onChange = (e) => {
@@ -61,18 +77,17 @@ export default function JoinPage(){
             case 'nick':
                 newInputs.nick = {value, valid: value.length >= 4};
                 break;
-            case 'interest':
-                newInputs.interest = {value, valid: true};
+            case 'hobby':
+                newInputs.hobby = {...newInputs.hobby,  [value]: !newInputs.hobby[value]};
                 break;
             default:
                 break;
         }
-        console.log(newInputs);
         setInputs(newInputs);
     }
 
     // 회원가입 눌렀을때..
-    const onSubmit = () => {
+    const onSubmit = async () => {
         // TODO: API 연결
         if(
             !isId(id.value) ||
@@ -84,11 +99,11 @@ export default function JoinPage(){
         }
         // 서버에 보낼 데이터!
         const data = {id: id.value, 
-                      pw: password.value,
-                      nick: nick.value,
-                      interest: interest,
+                      password: password.value,
+                      nickname: nick.value,
+                      hobby,
                     };
-        
+        await registerUser(data)
     }
 
 
@@ -96,55 +111,45 @@ export default function JoinPage(){
       
         <Container>
             <StyledTextFiled 
-                label="아이디(4~15 영문숫자)"
+                label="아이디(4~15 영문숫자 )"
                 type='text' 
                 name='id' 
                 value={id.value} 
                 onChange={onChange}
-                //error={id.vaild}
-                //helperText={id.vaild ? '유효한 아이디 아닙니다.(4~15영문숫자)' : ''}
             />
-            <br/>
             <StyledTextFiled 
                 label="비밀번호(6~15 영문숫자)"
                 type='password' 
                 name='password' 
                 value={password.value}  
                 onChange={onChange}
-                //error={password.vaild}
-                //helperText={password.vaild ? '6~15자 이내 비밀번호를 입력하세요.' : ''}
                 />                
-            <br/>
             <StyledTextFiled 
                 label="비밀번호확인"
                 type='password' 
                 name='pwCheck' 
                 value={pwCheck.value}  
                 onChange={onChange}
-                //error={pwCheck.vaild}
-                //helperText={password.vaild ? '비밀 번호가 일치하지 않습니다.' : ''}
                 />
-            <br/>
             <StyledTextFiled 
                 label="닉네임(3 글자 이상)"
                 type='text' 
                 name='nick' 
                 value={nick.value}  
                 onChange={onChange}
-                //error={nick.vaild}
-                //helperText={nick.vaild ? '3글자 이상으로 입력해주세요.' : ''}
                 />
-            <br/>
-            <StyledTextFiled 
-                label="관심사"
-                type='text' 
-                name='interest' 
-                value={interest.value}  
-                onChange={onChange}
-                //error={interest.vaild}
-                //helperText={interest.vaild ? '흥미를 입력해주세요.' : ''}
-                />
-            <br/>
+            
+            <Text>Selct hobbys</Text>   
+
+            <FormGroup row> 
+                <FormControlLabel control={<Checkbox name="hobby" value="coding" checked={hobby.coding} onClick={onChange}/>} label="coding" />
+                <FormControlLabel control={<Checkbox name="hobby" value="traning" checked={hobby.traning} onClick={onChange} />} label="traning" />
+                <FormControlLabel control={<Checkbox name="hobby" value="music" checked={hobby.music} onClick={onChange} />} label="music"/>
+                <FormControlLabel control={<Checkbox name="hobby" value="history" checked={hobby.history} onClick={onChange}/>} label="history" />
+                <FormControlLabel control={<Checkbox name="hobby" value="restaurant" checked={hobby.restaurant} onClick={onChange} />} label="restaurant" />
+                <FormControlLabel control={<Checkbox name="hobby" value="drink" checked={hobby.drink} onClick={onChange} />} label="drink" />
+            </FormGroup>
+            
             <StyledButton 
                 type="submit"
                 onClick={onSubmit}
@@ -157,3 +162,4 @@ export default function JoinPage(){
 
 
 }
+

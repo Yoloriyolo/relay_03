@@ -16,7 +16,10 @@ router.post('/', (req, res, next) => {
 
 
         // Check if user ID is already exist
-        if (userDB.hasOwnProperty(id)) res.status(502).json({ 'message': 'user id already exist' });
+        if (userDB.hasOwnProperty(id)) {
+            res.status(502).json({ 'message': 'user id already exist' });
+            return
+        } 
 
         const newUser = {
             id: id,
@@ -33,6 +36,7 @@ router.post('/', (req, res, next) => {
             if (err) {
                 console.error('post json 파일 write 오류');
                 res.status(500).json({ 'message': 'internal server error' });
+                return;
             }
 
 

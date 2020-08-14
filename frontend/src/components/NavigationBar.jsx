@@ -32,11 +32,11 @@ export default function NavigationBar() {
             부캠 나우
           </Typography>
           <Button color="inherit" className={classes.menu} href="/">자유게시판</Button>
-          <Button color="inherit" className={classes.menu}>동물</Button>
+          {/* <Button color="inherit" className={classes.menu}>동물</Button>
           <Button color="inherit" className={classes.menu}>인물</Button>
-          <Button color="inherit" className={classes.menu}>운동</Button>
+          <Button color="inherit" className={classes.menu}>운동</Button> */}
           <div className={classes.empty}></div>
-          <Button color="inherit" href="https://csy1204.github.io/animal-face/">동물상 찾기</Button>
+          <Button color="inherit" href="https://csy1204.github.io/animal-face/" target="_blank">동물상 찾기</Button>
           <Button color="inherit" href="/writing_post">글쓰기</Button>
           <Button color="inherit" href="/login">Login</Button>
         </Toolbar>

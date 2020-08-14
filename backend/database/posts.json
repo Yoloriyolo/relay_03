@@ -1,6 +1,6 @@
 {
     "board_id": 1,
-    "counter": 3,
+    "counter": 9,
     "posts": [
         {
             "post_id": "NaN",
@@ -32,6 +32,54 @@
             "author": "ddd",
             "date": "2020-08-14T10:02:15.361Z",
             "body": "되면 대박",
+            "comments": []
+        },
+        {
+            "post_id": "4",
+            "title": "테스트2",
+            "author": "ddd",
+            "date": "2020-08-14T12:14:46.950Z",
+            "body": "되면 대박22",
+            "comments": []
+        },
+        {
+            "post_id": "5",
+            "title": "aaa",
+            "author": "111",
+            "date": "2020-08-14T12:20:23.275Z",
+            "body": "23213",
+            "comments": []
+        },
+        {
+            "post_id": "6",
+            "title": "fgh",
+            "author": "333",
+            "date": "2020-08-14T12:20:56.579Z",
+            "body": "fhfgfg",
+            "comments": []
+        },
+        {
+            "post_id": "7",
+            "title": "sss",
+            "author": "csy",
+            "date": "2020-08-14T12:21:40.556Z",
+            "body": "aaaa",
+            "comments": []
+        },
+        {
+            "post_id": "8",
+            "title": "rthsd",
+            "author": "sdfsdf",
+            "date": "2020-08-14T12:21:46.894Z",
+            "body": "23r3",
+            "comments": []
+        },
+        {
+            "post_id": "9",
+            "title": "sss",
+            "author": "aa",
+            "date": "2020-08-14T12:36:49.170Z",
+            "body": "sss",
             "comments": []
         }
     ]
