@@ -1,0 +1,12 @@
+.login_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
