@@ -31,7 +31,7 @@ export default function LoginPage(props) {
             </div>
             <div className="input-group">
                 <label>PW</label>
-                <TextField style={styles.input} id = "pwInput" label="PW"  onChange={(e) => setPW(e.target.value)}/>
+                <TextField style={styles.input} id = "pwInput" label="PW" type="password" onChange={(e) => setPW(e.target.value)}/>
             </div>
           </div>
             <Button className="login-btn" variant="outlined" type="submit" value="Submit">Login</Button>

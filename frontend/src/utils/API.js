@@ -19,7 +19,7 @@ export const postData = (restUrl = '', data = {}) => {
 const handleLogin = (data) => {
     const endpoint = ''
     //if(!id || !pw) alert('모든 내용을 입력하세요.');
-    alert(data.id, data.pw);
+    alert(data.pw);
 
     // const result = await postData(url, {id, pw})
 
