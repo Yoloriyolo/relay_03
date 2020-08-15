@@ -1,19 +1,24 @@
 import React from 'react';
+import { handlePosting } from '../utils/API'
 
 export default function App() {
+  
   const [title, setTitle] = React.useState("");
   const [author, setAuthor] = React.useState("");
   const [content, setContent] = React.useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     console.log(`
       title: ${title}
       author: ${author}
       Accepted Terms: ${content}
     `);
-
-    event.preventDefault();
+    const result = await handlePosting({title, author, content});
+    window.location.href = "/"
   }
+
+
 
   return (
     <form onSubmit={handleSubmit}>

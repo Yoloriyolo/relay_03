@@ -1,0 +1,31 @@
+.login_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    margin-left: 10px;
+    width: 300px;
+    padding: .3em; /* 여백으로 높이설정 */
+}
+
+.btn_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    margin-top: 20px;
+    text-decoration: none
+}

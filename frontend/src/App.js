@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import NavigationBar from './NavigationBar';
-import Table from './Table';
-import Posting from './Posting';
-import Post from './components/Post';
+import NavigationBar from './components/NavigationBar';
+
+import Table from './pages/Table';
+import Posting from './pages/Posting';
+import Post from './pages/Post';
+import LoginPage from './pages/LoginPage'
+import ProfilePage from './pages/ProfilePage'
+import JoinPage from './pages/JoinPage'
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,16 +19,12 @@ class App extends Component {
       <Router>
         <NavigationBar />
         <Switch>
-          <Route path="/board" component={Post} />
-          <Route path="/writing_post">
-            <Posting />
-          </Route>
-          <Route path="/hi">
-            <div>a</div>
-          </Route>
-          <Route path="/">
-            <Table />
-          </Route>
+          <Route path="/board/:postId" component={Post} />
+          <Route path="/writing_post" component={Posting} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/join" component={JoinPage}/>
+          <Route path="/profile" component={ProfilePage} />
+          <Route exact path="/" component={Table} />         
         </Switch>
       </Router>
     );

@@ -1,0 +1,9 @@
+// http://localhost:3000/board/show/1
+{
+    "post_id": "1",
+    "title": "테스트",
+    "author": "ddd",
+    "date": "2020-08-14T09:43:33.990Z",
+    "body": "되면 대박",
+    "comments": []
+}

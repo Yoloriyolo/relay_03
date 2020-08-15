@@ -23,9 +23,9 @@ router.post('/', (req, res, next) => {
             const match = userDB[id].password === password;
 
             if (match) res.json({ 'message': '로그인 성공!', 'info': userDB[id] });
-            else res.status(401).json({ 'message': '아이디 혹은 비밀번호를 확인해주세요' });
+            else res.status(401).json({ 'message': '비밀번호를 확인해주세요' });
         } else {
-            res.status(401).json({ 'message': '유효하지 않은 사용자입니다!' });
+            res.status(402).json({ 'message': '유효하지 않은 사용자입니다!' });
         }
     })
 });
