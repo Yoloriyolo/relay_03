@@ -4,18 +4,19 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
+// const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 // const commentRouter = require('./routes/comment');
 const boardRouter = require('./routes/board');
 const registerRouter = require('./routes/register');
+const reactRouter = require('./routes/react');
 
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, "..", "frontend/build")));
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +33,8 @@ app.use('/api/users', usersRouter);
 app.use('/api/board', boardRouter);
 app.use('/api/register', registerRouter);
 app.use('/api/auth', authRouter);
-app.use('/', indexRouter);
+app.use('/*', reactRouter);
+// app.use('/', indexRouter);
 // app.use('/', reactRouter);
 
 
