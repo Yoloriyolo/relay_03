@@ -75,14 +75,21 @@ router.delete('/detail/:id', (req, res, next) => {
 
         const postDB = JSON.parse(data);
 
-        postDB.counter -= 1;
-        postDB.posts.splice(postDB.posts.findIndex(post => post.post_id === deleteId), 1);
+        // Check if post exist
+        const postIndex = postDB.posts.findIndex(post => post.post_id === deleteId)
+        if (postIndex === -1) {
+            res.status(502).json({ 'message': 'Post index not found' });
+            return
+        }
+
+
+        postDB.posts.splice(postIndex, 1);
         const json = JSON.stringify(postDB, null, 4);
 
         fs.writeFile(jsonPath, json, 'utf8', (err, file) => {
             if (err) {
                 console.error('post json 파일 write 오류');
-                res.status(500).json({ 'message': 'internal server error' });
+                res.status(501).json({ 'message': 'internal server error' });
             }
 
             res.status(201).json({ 'message': '게시글 삭제 성공!' });
