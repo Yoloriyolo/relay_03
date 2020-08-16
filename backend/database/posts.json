@@ -1,0 +1,30 @@
+{
+    "board_id": 1,
+    "counter": 4,
+    "posts": [
+        {
+            "post_id": "1",
+            "title": "테스트2",
+            "author": "ddd",
+            "date": "2020-08-16T06:04:26.206Z",
+            "body": "되면 대박22",
+            "comments": []
+        },
+        {
+            "post_id": "2",
+            "title": "테스트2",
+            "author": "ddd",
+            "date": "2020-08-16T06:04:27.407Z",
+            "body": "되면 대박22",
+            "comments": []
+        },
+        {
+            "post_id": "4",
+            "title": "테스트2",
+            "author": "ddd",
+            "date": "2020-08-16T06:04:28.265Z",
+            "body": "되면 대박22",
+            "comments": []
+        }
+    ]
+}
