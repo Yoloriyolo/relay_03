@@ -1,5 +1,15 @@
 ## :two_men_holding_hands: ​부캠나우(나우누리)
 
+##### Link: http://49.50.162.241:3000/
+
+### Checkpoint
+
+- [x] 회원가입 (로그인 창 - 아래 회원가입 버튼으로 접속 가능)
+- [x] 로그인
+- [x] 글쓰기
+- [x] 동물상 찾기
+
+
 ### :runner: Dependencies
 
 - python(v3.8)
