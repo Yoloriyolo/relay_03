@@ -11,7 +11,7 @@ const authRouter = require('./routes/auth');
 const boardRouter = require('./routes/board');
 const registerRouter = require('./routes/register');
 const reactRouter = require('./routes/react');
-
+const friendsRouter = require('./routes/friends');
 
 const app = express();
 
@@ -33,8 +33,8 @@ app.use('/api/users', usersRouter);
 app.use('/api/board', boardRouter);
 app.use('/api/register', registerRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/friends', friendsRouter);
 app.use('/*', reactRouter);
-// app.use('/', indexRouter);
 // app.use('/', reactRouter);
 
 

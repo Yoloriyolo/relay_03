@@ -47,9 +47,8 @@ const handleLogin = async (input) => {
     // }
 
     try {
-        const response = await postData(Url, input);
-        console.log(response);
-        window.location.href = "/"
+        const response = await postData(Url, input);     
+        return response.data.info;
     } catch (err) {
         alert("로그인에 실패하셨습니다.");
     } 
@@ -127,14 +126,64 @@ const handlePosting = async (data) => {
 const registerUser = async (data) => {
     const response = await postData("register/", data)
     if (response.status === 201) window.location.href = "/login"
-
 }
 
+const getFriendRecommendation = async (userId) => {
+    const postDummy = [
+        {
+            "id": "123456",
+            "password": "123456",
+            "nickname": "1234",
+            "hobby": {
+                "coding": true,
+                "traning": true,
+                "music": false,
+                "history": false,
+                "restaurant": true,
+                "drink": false
+            }
+        },
+        {
+            "id": "asdf",
+            "password": "123456",
+            "nickname": "asdf",
+            "hobby": {
+                "coding": true,
+                "traning": true,
+                "music": false,
+                "history": false,
+                "restaurant": true,
+                "drink": false
+            }
+        },
+        {
+            "id": "qwer",
+            "password": "123456",
+            "nickname": "qwer",
+            "hobby": {
+                "coding": true,
+                "traning": true,
+                "music": false,
+                "history": false,
+                "restaurant": true,
+                "drink": false
+            }
+        }
+    ]
+    // return postDummy
+    const Url = `friends/${userId}`
+    
+    const { data } = await getData(Url);
+
+    console.log('result' + data);
+    return data;
+}
 export {
     handleLogin,
     // handleJoin,
     getPostById,
     registerUser,
     getPosts,
-    handlePosting
+    handlePosting,
+    getFriendRecommendation
 }

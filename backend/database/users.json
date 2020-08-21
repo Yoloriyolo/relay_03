@@ -1,15 +1,28 @@
 {
+    "123456": {
+        "id": "123456",
+        "password": "123456",
+        "nickname": "1234",
+        "hobby": {
+            "coding": true,
+            "traning": true,
+            "music": false,
+            "history": false,
+            "restaurant": true,
+            "drink": false
+        }
+    },
     "myid": {
         "id": "myid",
         "password": "mypassword",
         "nickname": "mynick",
         "hobby": {
-            "coding": false,
-            "training": true,
-            "music": false,
-            "history": true,
-            "restaurant": false,
-            "drink": false
+            "coding": 4,
+            "training": 3,
+            "music": 2,
+            "history": 1,
+            "restaurant": 1,
+            "drink": 1
         }
     },
     "yourid": {
@@ -17,12 +30,12 @@
         "password": "yourpassword",
         "nickname": "yournick",
         "hobby": {
-            "coding": false,
-            "training": true,
-            "music": false,
-            "history": true,
-            "restaurant": false,
-            "drink": false
+            "coding": 4,
+            "training": 1,
+            "music": 0,
+            "history": 1,
+            "restaurant": 1,
+            "drink": 0
         }
     },
     "id123": {
@@ -30,13 +43,12 @@
         "password": "password",
         "nickname": "nicknick",
         "hobby": {
-            "coding": true,
-            "training": true,
-            "music": false,
-            "history": true,
-            "restaurant": false,
-            "drink": false
+            "coding": 2,
+            "training": 3,
+            "music": 1,
+            "history": 4,
+            "restaurant": 1,
+            "drink": 1
         }
-    },
-    "undefined": {}
+    }
 }
