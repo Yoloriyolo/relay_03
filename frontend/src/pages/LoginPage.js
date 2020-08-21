@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'; 
 import './LoginPage.css';
 import { handleLogin } from '../utils/API.js'
-
+import { useContextState, useContextDispatch } from '../Context';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,11 +20,16 @@ export default function LoginPage(props) {
   const classes = useStyles();
   const [id, setID] = useState("");
   const [password, setPW] = useState("");
-
+  const {setLogin, setUserId}= useContextDispatch();
   const onSubmit = () => {
-    handleLogin({id, password});
-    setID("");
-    setPW("");
+    handleLogin({id, password}).then(res=>{
+      setLogin(true);
+      setUserId(res.id)
+      console.log("안에 들어오는지 확인 -----")
+      setID("");
+      setPW("");
+      window.location.href = "/"
+    });
   }
 
   return (

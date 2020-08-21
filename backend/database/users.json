@@ -1,4 +1,17 @@
 {
+    "123456": {
+        "id": "123456",
+        "password": "123456",
+        "nickname": "1234",
+        "hobby": {
+            "coding": true,
+            "traning": true,
+            "music": false,
+            "history": false,
+            "restaurant": true,
+            "drink": false
+        }
+    },
     "myid": {
         "id": "myid",
         "password": "mypassword",

@@ -43,51 +43,89 @@ const initialState = {
         vaild: false,
     },
     hobby: {
-        coding : false,
-        traning : false,
-        music : false,
-        history : false,
-        restaurant : false,
-        drink : false,
+        coding : 0,
+        traning : 0,
+        music : 0,
+        history : 0,
+        restaurant : 0,
+        drink : 0,
     }
-}
+}    
+
+
 
 
 export default function JoinPage(){
-
+    
+    
     const [inputs, setInputs] = useState(initialState);
     const {id, password, pwCheck, nick, hobby} = inputs
-
-
+    
+    
     const onChange = (e) => {
         const {name, value} = e.target;
         const newInputs = {...inputs};
-
+        
+        console.log(value)
         switch(name){
             case 'id':
                 newInputs.id = {value, valid: isId(value)};
                 break;
-            case 'password':
+                case 'password':
                 newInputs.password = {value, valid: isPassword(value)};
                 newInputs.pwCheck.valid = value === pwCheck.value;
                 break;
-            case 'pwCheck':
+                case 'pwCheck':
                 newInputs.pwCheck = {value, valid: password.value === value};
                 break;
-            case 'nick':
+                case 'nick':
                 newInputs.nick = {value, valid: value.length >= 4};
                 break;
-            case 'hobby':
-                newInputs.hobby = {...newInputs.hobby,  [value]: !newInputs.hobby[value]};
+            case 'hobby.coding':
+               // if([0-9])
+               //const curValue=newInputs.hobby.coding;
+               //let newValue = curValue.replace(/[^0-9]/g, '') 
+               //정규식 체크
+                //console.log(newValue);
+                
+                //if(/[0|1-9]+[0-9]*/.test(newInputs.hobby.coding)){
+                    //    console.log('ok'); 
+                //}
+                
+                newInputs.hobby = {...hobby, coding: value};
+                
                 break;
+                case 'hobby.traning':   
+                newInputs.hobby = {...hobby, traning: value};
+                break;
+                case 'hobby.music':
+                newInputs.hobby = {...hobby, music: value};
+                break;
+                case 'hobby.history':
+                newInputs.hobby = {...hobby, history: value};
+                break;
+            case 'hobby.restaurant':
+                newInputs.hobby = {...hobby, restaurant: value};
+                break;
+                case 'hobby.drink':
+                newInputs.hobby = {...hobby, drink: value};
+                break;
+            
             default:
                 break;
         }
         setInputs(newInputs);
     }
-
+    function sum(){
+        let a = 0
+        Object.keys(hobby).forEach(item=> a+=hobby[item]);
+        return a;
+    }
     // 회원가입 눌렀을때..
     const onSubmit = async () => {
+        if(sum() != 100){
+            return alert('값의 합은 100이 되어야합니다!')
+        }
         // TODO: API 연결
         if(
             !isId(id.value) ||
@@ -99,14 +137,14 @@ export default function JoinPage(){
         }
         // 서버에 보낼 데이터!
         const data = {id: id.value, 
-                      password: password.value,
+            password: password.value,
                       nickname: nick.value,
                       hobby,
                     };
-        await registerUser(data)
-    }
-
-
+                    await registerUser(data)
+                }
+                
+                
     return (
       
         <Container>
@@ -141,15 +179,49 @@ export default function JoinPage(){
             
             <Text>Selct hobbys</Text>   
 
-            <FormGroup row> 
-                <FormControlLabel control={<Checkbox name="hobby" value="coding" checked={hobby.coding} onClick={onChange}/>} label="coding" />
-                <FormControlLabel control={<Checkbox name="hobby" value="traning" checked={hobby.traning} onClick={onChange} />} label="traning" />
-                <FormControlLabel control={<Checkbox name="hobby" value="music" checked={hobby.music} onClick={onChange} />} label="music"/>
-                <FormControlLabel control={<Checkbox name="hobby" value="history" checked={hobby.history} onClick={onChange}/>} label="history" />
-                <FormControlLabel control={<Checkbox name="hobby" value="restaurant" checked={hobby.restaurant} onClick={onChange} />} label="restaurant" />
-                <FormControlLabel control={<Checkbox name="hobby" value="drink" checked={hobby.drink} onClick={onChange} />} label="drink" />
-            </FormGroup>
-            
+            <StyledTextFiled
+                label = "coding"
+                type = 'text'
+                name = 'hobby.coding'
+                value = {hobby.coding}
+                onChange={onChange}
+                />
+            <StyledTextFiled
+                label = "music"
+                type = 'text'
+                name = 'hobby.music'
+                value = {hobby.music}
+                onChange={onChange}
+                />
+            <StyledTextFiled
+                label = "traning"
+                type = 'text'
+                name = 'hobby.traning'
+                value = {hobby.traning}
+                onChange={onChange}
+            />
+            <StyledTextFiled
+                label = "history"
+                type = 'text'
+                name = 'hobby.history'
+                value = {hobby.history}
+                onChange={onChange}
+            />
+            <StyledTextFiled
+                label = "restaurant"
+                type = 'text'
+                name = 'hobby.restaurant'
+                value = {hobby.restaurant}
+                onChange={onChange}
+            />
+            <StyledTextFiled
+                label = "drink"  
+                type = 'text'
+                name = 'hobby.drink'
+                value = {hobby.drink}
+                onChange={onChange}
+            />
+                
             <StyledButton 
                 type="submit"
                 onClick={onSubmit}

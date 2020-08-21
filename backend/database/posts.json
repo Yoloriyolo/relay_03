@@ -1,6 +1,6 @@
 {
     "board_id": 1,
-    "counter": 4,
+    "counter": 5,
     "posts": [
         {
             "post_id": "1",
@@ -24,6 +24,14 @@
             "author": "ddd",
             "date": "2020-08-16T06:04:28.265Z",
             "body": "되면 대박22",
+            "comments": []
+        },
+        {
+            "post_id": "5",
+            "title": "123445",
+            "author": "123456",
+            "date": "2020-08-21T06:00:23.684Z",
+            "body": "12345678",
             "comments": []
         }
     ]
