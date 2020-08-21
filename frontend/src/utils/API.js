@@ -170,13 +170,13 @@ const getFriendRecommendation = async (userId) => {
             }
         }
     ]
-    return postDummy
-    // const Url = `/api/friends/{userid}`
+    // return postDummy
+    const Url = `friends/${userId}`
     
-    // const { data } = await getData(Url);
+    const { data } = await getData(Url);
 
-    // console.log('result' + data);
-    // return data;
+    console.log('result' + data);
+    return data;
 }
 export {
     handleLogin,

@@ -21,14 +21,20 @@ export default function LoginPage(props) {
   const [id, setID] = useState("");
   const [password, setPW] = useState("");
   const {setLogin, setUserId}= useContextDispatch();
+  const { userId } = useContextState();
   const onSubmit = () => {
     handleLogin({id, password}).then(res=>{
+      console.log(userId)
       setLogin(true);
+      console.log(userId)
       setUserId(res.id)
+      console.log(setUserId)
+      console.log(userId)
+      console.log(res.id)
       console.log("안에 들어오는지 확인 -----")
       setID("");
       setPW("");
-      window.location.href = "/"
+      // window.location.href = "/"
     });
   }
 
