@@ -82,15 +82,7 @@ export default function JoinPage(){
                 newInputs.nick = {value, valid: value.length >= 4};
                 break;
             case 'hobby.coding':
-               // if([0-9])
-               //const curValue=newInputs.hobby.coding;
-               //let newValue = curValue.replace(/[^0-9]/g, '') 
-               //정규식 체크
-                //console.log(newValue);
-                
-                //if(/[0|1-9]+[0-9]*/.test(newInputs.hobby.coding)){
-                    //    console.log('ok'); 
-                //}
+               
                 
                 newInputs.hobby = {...hobby, coding: value};
                 
@@ -121,11 +113,21 @@ export default function JoinPage(){
         Object.keys(hobby).forEach(item=> a+=hobby[item]);
         return a;
     }
+    /*
+    function checkInputNumber(obj){
+        let reg=/^[0-9]{1,100}$/g;
+        if(reg.test(obj.value)){
+            alert("숫자만 입력하세요");
+        }
+    }
+    */
     // 회원가입 눌렀을때..
     const onSubmit = async () => {
+        //checkInputNumber(obj);
         if(sum() != 100){
             return alert('값의 합은 100이 되어야합니다!')
         }
+        
         // TODO: API 연결
         if(
             !isId(id.value) ||

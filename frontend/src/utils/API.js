@@ -171,7 +171,7 @@ const getFriendRecommendation = async (userId) => {
         }
     ]
     return postDummy
-    // const Url = `/friendRecommend/${userId}`
+    // const Url = `/api/friends/{userid}`
     
     // const { data } = await getData(Url);
 
