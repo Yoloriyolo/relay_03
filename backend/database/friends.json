@@ -1,0 +1,18 @@
+{
+  "myid": {
+      "id": "myid",
+      "friends": ["yourid","id123","id234"]
+  },
+  "yourid": {
+      "id": "yourid",
+      "friends": ["myid","id123","id234"]
+  },
+  "id123": {
+      "id": "id123",
+      "friends": ["myid","yourid","id234"]
+  },
+  "id234": {
+    "id": "id234",
+    "friends": ["myid","yourid","id123"]
+  }
+}
